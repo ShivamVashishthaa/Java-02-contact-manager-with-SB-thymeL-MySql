@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="normal/user_base::layout(~{::section})">
+
+<head>
+	<meta charset="ISO-8859-1">
+	<title>home page</title>
+</head>
+
+<body>
+	<section>
+		<div class="card card-body mb-2 mr-2">
+			<h1 class="text-center ">Add Contact</h1>
+			<div class="container-fluid mt-1  ">
+				<div class="row">
+					<div class="col-md-10 offset-1 ">
+						<form novalidate th:action="@{/user/process-contact}" method="post" th:object="${contact}"
+							enctype="multipart/form-data">
+							<!-- Name -->
+							<div class="input-group  mb-3 ">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-2 ">
+										<i class="fa fa-plus"></i>
+									</div>
+								</div>
+								<input type="text" class="form-control " id="name" name="name"
+									th:classappend="${#fields.hasErrors('name') ? 'is-invalid' : ''}"
+									aria-describedby="emailHelp" placeholder="Enter Name here" required />
+								<div th:each=" e : ${#fields.errors('name')}" th:text="${e}" class="invalid-feedback">
+								</div>
+							</div>
+							<!-- nickname -->
+							<div class="input-group mb-3  ">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-2 ">
+										<i class="fa fa-user-alt"></i>
+									</div>
+								</div>
+								<input type="text" class="form-control " id="nickname" name="nickname"
+									aria-describedby="emailHelp" placeholder="Enter nickname here" required />
+							</div>
+							<!-- Email -->
+							<div class="input-group mb-3  ">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-2 ">
+										@
+									</div>
+								</div>
+								<input type="email" class="form-control " id="email" name="email"
+									aria-describedby="emailHelp" placeholder="Enter Email here" required />
+							</div>
+							<!-- work -->
+							<div class="input-group mb-3  ">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-2 ">
+										<i class="fa fa-briefcase"></i>
+									</div>
+								</div>
+								<input type="text" class="form-control " id="work" name="work"
+									aria-describedby="emailHelp" placeholder="Enter Work here" required />
+							</div>
+							<!-- phone -->
+							<div class="input-group mb-3  ">
+								<div class="input-group-prepend">
+									<div class="input-group-text mr-2 ">
+										<i class="fa fa-phone"></i>
+									</div>
+								</div>
+								<input type="text" class="form-control " id="phone" name="phone"
+									th:classappend="${#fields.hasErrors('phone') ? 'is-invalid' : ''}"
+									aria-describedby="emailHelp" placeholder="Enter phone here" required />
+								<div th:each=" e : ${#fields.errors('phone')}" th:text="${e}" class="invalid-feedback">
+								</div>
+							</div>
+
+							<!-- description -->
+							<div class="input-group mb-3  ">
+								<textarea class="form-control " id="description" name="description" cols="30" rows="3"
+									aria-describedby="emailHelp" placeholder="Enter description here"
+									required></textarea>
+							</div>
+							<!-- contact image -->
+							<div class="custom-file mb-3 ">
+								<input type="file" name="profileImage" id="image">
+							</div>
+							<div class=" ">
+								<button type="submit" class=" btn mybtn btn-primary mr-3">Save</button>
+								<button type="reset" class=" btn mybtn btn-warning">Reset</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div> 
+		<!-- tinyMCE -->
+		<!-- <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+		<script>
+			tinymce.init({
+				selector: '#description'
+			});
+		</script> -->
+	</section>
+</body>
+
+</html>

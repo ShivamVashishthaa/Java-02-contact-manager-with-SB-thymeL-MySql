@@ -1,0 +1,92 @@
+body{
+    background-color: whitesmoke;
+}
+
+.banner{
+    width: 100%;
+    height: 90vh;
+    color: white;
+    background: linear-gradient(rgba(27, 27, 27, 0.8),rgba(27,27,27,0.8)) ,url(../img/1339621.png) no-repeat center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-card{
+    padding: 20px;
+    background: #FFFF;
+    
+}
+
+@media only screen and (max-width: 600px) {
+    .sidebar{
+        display: none;
+        width: 80% !important;
+        background: white;
+        height: 100vh;
+        position: fixed;
+        padding-top: 20px;
+    }
+    .content{
+        margin-left: 0% !important;
+    }
+}
+
+.sidebar{
+    width: 18%;
+    background: white;
+    height: 100%;
+    position: fixed;
+    padding-top: 59px;
+    /* margin-top: 46px; */
+    z-index: 10;
+}
+
+.sidebar a{
+    display: block;
+    width: 100%;
+    padding: 10px 25px;
+    text-decoration: none;
+    color: gray;
+}
+
+.sidebar a:hover{
+    background: #e2e2e2;
+}
+
+.sidebar .divider {
+    height: .5px;
+    width: 100%;
+    background: #e2e2e2;
+    margin-top: 10px;
+}
+
+.content{
+    margin-left: 20%;
+    margin-top: 55px;
+
+}
+
+.sidebar .crossBtn{
+    position: absolute;
+    top: 0%;
+    right: 35px;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.myProfileImage{
+    width: 35px;
+    height: 35px;
+}
+/* seach css */
+
+.search-container{
+    position: relative;
+}
+
+.search-result{
+    position: absolute;
+    background: black;
+    
+}
